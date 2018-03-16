@@ -1,0 +1,161 @@
+@mixin prefix-animation($parameters)
+  -webkit-animation : $parameters
+  -moz-animation    : $parameters
+  -ms-animation     : $parameters
+  animation         : $parameters
+
+@mixin prefix-transform($parameters)
+  -webkit-transform : $parameters
+  -moz-transform    : $parameters
+  -ms-transform     : $parameters
+  transform         : $parameters
+
+.tools
+  min-height: 580px
+  background-color: $lightly-purple
+
+  h3
+    font-size: 48px
+    font-family: "Poppins", Arial, sans-serif
+    text-align: right
+    color: $dark-teal
+    font-weight: 800
+    text-transform: uppercase
+    padding: 10vh 15vw 10vh 0
+    margin: 0
+
+  p
+    margin: 0
+    font-weight: 500
+    padding-top: 10vh
+    padding-bottom: 10vh
+    text-align: center
+    color: $dark-teal
+    font-size: 25px
+    font-family: "Poppins", Arial, sans-serif
+
+
+  .flex-wrap
+    padding-left: 10vw
+    padding-right: 10vw
+    display: block
+    text-align: center
+
+    .left-side
+      display: inline-block
+      margin: 0
+      padding-right: 0
+      background-image: url($baseurl + "../icons/milky-way.png")
+      background-size: contain
+      background-repeat: no-repeat
+      height: 200px
+      width: 200px
+      +prefix-transform(rotateZ(0deg))
+      +prefix-animation(venus 6s linear infinite)
+
+    .right-side
+      margin-left: 35vw
+      display: inline-block
+      text-align: left
+      p
+        display: inline
+        font-size: 16px
+        font-family: "Poppins", Arial, sans-serif
+        font-weight: 800
+        color: $dark-teal
+      .perc
+        padding-left: 15px
+
+      .empty-loadbar
+        width: 250px
+        height: 5px
+        background-color: #292929
+        margin-bottom: 5vh
+
+        .bar1
+          height: 5px
+          width: 90%
+          background-color: $light-red
+
+        .bar2
+          height: 5px
+          width: 90%
+          background-color: $light-red
+
+        .bar3
+          height: 5px
+          width: 80%
+          background-color: $light-red
+
+
+
+@media(max-height:600px)
+  .skills
+    .flex-wrap
+      .left-side
+        height: 200px
+        width: 175px
+
+
+@media(max-width:1060px)
+  .tools
+    h3
+      text-align: center
+      padding-right: 4vw
+    .flex-wrap
+      padding-left: 4vw
+      padding-right: 4vw
+      .left-side
+        height: 150px
+        width: 125px
+
+
+@media(max-width:840px)
+  .tools
+    .flex-wrap
+      padding-left: 0
+      padding-right: 0
+      .left-side
+        height: 150px
+        width: 125px
+
+
+@media(max-width:735px)
+  .tools
+    h3
+      font-size: 40px
+    .flex-wrap
+      padding-left: 0
+      padding-right: 0
+      .right-side
+        margin-left: 15vw
+      .left-side
+        margin-left: 20px
+        // height: 90px
+        // width: 70px
+
+@media(max-width:640px)
+  .tools
+    p
+      font-size: 15px
+    min-height: 700px
+    .flex-wrap
+      .right-side
+        p
+          font-size: 12px
+        margin: 30px auto 0 auto
+      .left-side
+        display: block
+        margin: 0px auto 50px auto
+
+    h3
+      margin-left: 1vw
+      span
+        font-size: 30%
+
+
+@media(max-width:400px)
+  .tools
+    .flex-wrap
+      .left-side
+        margin-top: 20px

@@ -1,0 +1,131 @@
+@mixin prefix-animation($parameters)
+	-webkit-animation : $parameters
+	-moz-animation    : $parameters
+	-ms-animation     : $parameters
+	animation         : $parameters
+
+@mixin prefix-transform($parameters)
+	-webkit-transform : $parameters
+	-moz-transform    : $parameters
+	-ms-transform     : $parameters
+	transform         : $parameters
+
+
+@mixin prefix-box-sizing($parameters)
+	-webkit-box-sizing : $parameters
+	-moz-box-sizing    : $parameters
+	-ms-box-sizing     : $parameters
+	box-sizing         : $parameters
+	
+.contact
+	min-height: 650px
+	background-color: $main-yellow
+
+	h3
+		font-size: 48px
+		font-family: "Poppins", Arial, sans-serif
+		text-align: center
+		color: $darkish-purple
+		font-weight: 800
+		text-transform: uppercase
+		margin: 0
+		padding-top: 35px
+
+	.contact-wrap
+		text-align: center	
+
+.my-form
+	display: inline-block
+	width: 300px
+	margin: 0 40vw 0 0
+	padding-top: 70px
+	form
+		p
+			margin-top: 0
+
+		button
+			background-color: $darkish-purple
+			color: #f4f4f4
+			font-family: "Poppins", Arial, sans-serif
+			padding: 15px 35px 15px 35px
+			border: 0
+			font-weight: 300
+			transition-duration: 0.3s
+
+			&:hover
+				font-weight: 700
+				opacity: 1
+			
+
+		input, textarea
+			color: $darkish-purple
+			font-family: "Poppins", Arial, sans-serif
+			background-color: $main-yellow
+			width: 100%
+			padding: 1em
+			border: 0px solid $darkish-purple
+			border-bottom: 5px solid $darkish-purple
+			&:focus
+				-webkit-appearance: none
+				outline: none			
+
+		textarea
+			resize: none
+
+		:-ms-input-placeholder
+			color: $darkish-purple !important
+			font-weight: 1000
+			font-size: 12px
+		::-ms-input-placeholder
+			color: $darkish-purple !important
+			font-weight: 1000
+			font-size: 12px
+
+		::placeholder
+			color: $darkish-purple
+			font-weight: 1000
+			font-size: 12px	
+		
+
+.spaceship
+	margin: 0 0 0 0
+	padding: 0
+	height: 180px
+	width: 180px
+	background-image: url($baseurl + "../icons/spaceship.png")
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+	display: inline-block
+	+prefix-animation(space 6s linear infinite)
+
+@keyframes space
+	0%
+		+prefix-transform(rotateZ(0deg))
+	100%
+		+prefix-transform(rotateZ(360deg))	
+
+
+@media screen and(max-width:850px)
+	.my-form
+		margin: 0 15vw 0 0	
+
+@media screen and(max-width:620px)
+	.contact
+		h3
+			font-size: 38px
+	.contact-wrap
+		padding-bottom: 100px
+		.my-form
+			display: block
+			margin: auto
+			margin-bottom: 100px
+		
+		.spacestaton
+			display: block
+			margin: auto		
+
+@media screen and(max-width:410px)
+	.my-form
+		width: 90%			
+		padding: 0 0 0 0

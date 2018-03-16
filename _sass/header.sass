@@ -1,0 +1,207 @@
+@mixin prefix-animation($parameters)
+  -webkit-animation : $parameters
+  -moz-animation    : $parameters
+  -ms-animation     : $parameters
+  animation         : $parameters
+
+@mixin prefix-transform($parameters)
+  -webkit-transform : $parameters
+  -moz-transform    : $parameters
+  -ms-transform     : $parameters
+  transform         : $parameters
+
+.my-nav
+  padding-top: 35px
+  padding-bottom: 35px
+  background-color: $navbar
+  position: sticky
+  top: 0
+  width: 100%
+  z-index: 999
+
+  text:
+    align: center
+  a
+    +prefix-animation(offsubhed 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+    &:hover
+      +prefix-animation(onsubhed 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+    display: inline-block
+    text-decoration: none
+    margin-right: 50px
+    color: $light-red
+    text-transform: uppercase
+
+
+    font:
+      family: "Poppins", Arial, sans-serif
+      size: 18px
+
+header
+  background-color: $main-blue
+  height: 100vh
+
+  h2
+    +prefix-animation(saram 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s 1 forwards)
+    font:
+      weight: 500
+      size: 24px
+      family: "Poppins", Arial, sans-serif
+    color: $light-red
+    text-align: center
+    margin-top: 5vh
+
+  .main-heading
+    +prefix-animation(saram 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+
+    font:
+      size: 103px
+      family: "Poppins", Arial, sans-serif
+    color: $light-red
+    text-align: center
+    margin: 25vh 0 53px 0
+    text-transform: uppercase
+
+
+  .head-bar
+    height: 5px
+    background-color: $light-red
+    width: 60%
+    margin: auto
+    +prefix-animation(bar 1s cubic-bezier(0.26, 0.96, 0.4, 0.51) 0s 1 forwards)
+
+  .sub-heads
+    +prefix-animation(saram 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s 1 forwards)
+    text-align: center
+    margin-bottom: 10px
+    h4
+
+      display: inline
+      margin-left: 70px
+      margin-right: 70px
+
+      font:
+        weight: 500
+        size: 14px
+        family: "Poppins", Arial, sans-serif
+      color: $light-red
+
+
+
+@keyframes bar
+  0%
+    +prefix-transform(scaleX(0))
+  100%
+    +prefix-transform(scaleX(1))
+
+@keyframes saram
+  0%
+    +prefix-transform(translate(0%, 100%) scale(0.7))
+    opacity: 0
+
+  100%
+    +prefix-transform(translate(0%, 0%) scale(1))
+    opacity: 1
+
+@keyframes offsubhed
+  0%
+    +prefix-transform(scale(1.2) rotateZ(10deg))
+
+  50%
+    +prefix-transform(scale(0.7) rotateZ(0deg))
+
+  100%
+    +prefix-transform(scale(1) rotateZ(0deg))
+
+
+@keyframes onsubhed
+  0%
+    +prefix-transform(scale(1) rotateZ(0deg))
+
+  50%
+    +prefix-transform(scale(0.7) rotateZ(0deg))
+
+  100%
+    +prefix-transform(scale(1.2) rotateZ(10deg))
+
+
+@media(max-width:860px)
+  header
+    h2
+      font-size: 16px
+    .main-heading
+      font-size: 70px
+      margin-bottom: 35px
+
+    .sub-heads h4
+      margin-right: 15px
+      margin-left: 15px
+
+    .head-bar
+      width: 80%
+
+
+@media(max-width:650px)
+  .my-nav
+    a
+      font-size: 13px
+  header
+    .sub-heads h4
+      margin-right: 20px
+      margin-left: 20px
+      font-size: 10px
+
+@media(max-width:600px)
+  header
+    height: 60vh
+  .my-nav a
+    margin-right: 25px
+
+
+@media(max-width:480px)
+  header
+    .main-heading
+      font-size: 50px
+      margin-bottom: 18px
+
+
+@media(max-width:455px)
+  header
+    .sub-heads
+      .sub-first
+        margin-left: 0
+      .sub-last
+        margin-right: 0
+
+@media(max-width:410px)
+  header
+    h2
+      font-size: 12px
+    .sub-heads
+      h4
+        font-size: 10px
+        margin-left: 3px
+
+@media(max-width:366px)
+  .my-nav
+    a
+      margin-right: 10px
+      font-size: 11px
+  header
+    .main-heading
+      font-size: 30px
+    .sub-heads
+      h4
+        margin-left: 0px
+        margin-right: 10px
+        padding-left: 0
+
+
+
+@media(max-width:340px)
+  header
+    .sub-heads
+      h4
+        margin-left: 0px
+        margin-right: 10px
+        padding-left: 0
+        font-size: 9px

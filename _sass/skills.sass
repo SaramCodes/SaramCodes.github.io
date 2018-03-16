@@ -1,0 +1,152 @@
+@mixin prefix-animation($parameters)
+  -webkit-animation : $parameters
+  -moz-animation    : $parameters
+  -ms-animation     : $parameters
+  animation         : $parameters
+
+@mixin prefix-transform($parameters)
+  -webkit-transform : $parameters
+  -moz-transform    : $parameters
+  -ms-transform     : $parameters
+  transform         : $parameters
+
+.skills
+  min-height: 490px
+  background-color: $lightly-teal
+
+  .flex-wrapper
+    padding-left: 10vw
+    padding-right: 10vw
+    display: block
+    text-align: center
+
+    .left-side
+      margin-right: 35vw
+      display: inline-block
+      text-align: left
+      p
+        display: inline
+        font-size: 16px
+        font-family: "Poppins", Arial, sans-serif
+        font-weight: 800
+        color: $light-red
+      .perc
+        padding-left: 15px
+
+      .empty-loadbar
+        width: 250px
+        height: 5px
+        background-color: $light-red
+        margin-bottom: 5vh
+
+        .bar1
+          height: 5px
+          width: 90%
+          background-color: $bar-yellow
+
+        .bar2
+          height: 5px
+          width: 90%
+          background-color: $bar-yellow
+
+        .bar3
+          height: 5px
+          width: 80%
+          background-color: $bar-yellow
+
+    .right-side
+      display: inline-block
+      text-align: right
+      margin: 0
+      padding-right: 5vh
+      background-image: url($baseurl + "../icons/venus.png")
+      background-size: contain
+      background-repeat: no-repeat
+      height: 200px
+      width: 150px
+      +prefix-transform(rotateZ(0deg))
+      +prefix-animation(venus 6s linear infinite)
+
+
+  h3
+    margin-top: 0
+    margin-left: 13vw
+    padding-top: 10vh
+    font-size: 48px
+    font-family: "Poppins", Arial, sans-serif
+    font-weight: 800
+    text-transform: uppercase
+    color: $light-red
+    span
+      font-size: 50%
+      text-transform: capitalize
+
+
+@keyframes venus
+  0%
+    +prefix-transform(scale(1) rotate(0deg))
+  50%
+    +prefix-transform(scale(1.5) rotate(180deg))
+  100%
+    +prefix-transform(scale(1) rotate(360deg))
+
+
+@media(max-height:600px)
+  .skills
+    .flex-wrapper
+      .right-side
+        height: 200px
+        width: 175px
+
+
+@media(max-width:1060px)
+  .skills
+    h3
+      text-align: center
+      span
+        font-size: 30%
+      margin-left: 4vw
+    .flex-wrapper
+      padding-left: 4vw
+      padding-right: 4vw
+      .right-side
+        height: 150px
+        width: 125px
+        padding-right: 3vh
+
+
+
+@media(max-width:735px)
+  .skills
+    h3
+      font-size: 40px
+    .flex-wrapper
+      padding-left: 0
+      padding-right: 0
+      .right-side
+        height: 90px
+        width: 70px
+
+@media(max-width:640px)
+  .skills
+    min-height: 700px
+    .flex-wrapper
+      .left-side
+        p
+          font-size: 12px
+        margin: 30px auto 0 auto
+      .right-side
+        display: block
+        margin: 100px auto 0 auto
+
+    h3
+      margin-left: 1vw
+      span
+        font-size: 30%
+
+
+@media(max-width:400px)
+  .skills
+    .flex-wrapper
+      .right-side
+        margin-top: 80px
