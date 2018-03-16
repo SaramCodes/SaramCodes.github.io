@@ -7,7 +7,7 @@
     <div class="thumb-wrap">
       <div class="showcase-images">
       {% for project in site.data.settings.projects %}
-        <div class="thumb-unit" data-folder="{{project.folder}}" style="background-image:url(assets/work/{{project.folder}}/thumb.jpg)">
+        <div class="thumb-unit" data-folder="{{project.folder}}" {% if project.name == "Minimal B&W Design" %} style="background-image:url(assets/work/{{project.folder}}/thumb.JPG)" {% else %}style="background-image:url(assets/work/{{project.folder}}/thumb.JPG)"{% endif %} >
           <div class="thumb-overlay">
             <p>{{ project.name }}</p>
           </div>
