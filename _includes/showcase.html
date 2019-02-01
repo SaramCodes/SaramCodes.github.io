@@ -3,16 +3,18 @@
 
 
   <div class="work-belt">
-    
+
     <div class="thumb-wrap">
       <div class="showcase-images">
-      {% for project in site.data.settings.projects %}
-        <div class="thumb-unit" data-folder="{{project.folder}}" {% if project.name == "Minimal B&W Design" %} style="background-image:url(assets/work/{{project.folder}}/thumb.JPG)" {% else %} style="background-image:url(assets/work/{{project.folder}}/thumb.jpg)"{% endif %} >
+        {% for project in site.data.settings.projects %}
+        <div class="thumb-unit" data-folder="{{project.folder}}" {% if project.name=="Minimal B&W Design" or
+          project.name=="Responsive Mockup" or project.name=="AAMMN" %} style="background-image:url(assets/work/{{project.folder}}/thumb.JPG)"
+          {% else %} style="background-image:url(assets/work/{{project.folder}}/thumb.jpg)" {% endif %}>
           <div class="thumb-overlay">
             <p>{{ project.name }}</p>
           </div>
         </div>
-      {% endfor %}
+        {% endfor %}
       </div>
     </div>
 
