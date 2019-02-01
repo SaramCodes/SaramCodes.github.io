@@ -17,7 +17,7 @@
 	h3
 		font-size: 48px
 		padding: 80px 0 0 0
-		text-transform: uppercase
+		text-transform: capitalize
 		text-align: center
 		color: $lightly-teal
 		font-weight: 800
@@ -45,9 +45,10 @@
 			background-size: contain
 			background-position: center center
 			background-repeat: no-repeat
-			+prefix-animation(my-link 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+			transition-duration: 0.3s
+			transition-timing-function: ease	
 			&:hover
-				+prefix-animation(my-link-hov 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+				transform: rotate(180deg)
 
 
 		.email
@@ -56,32 +57,24 @@
 			background-size: contain
 			background-position: center center
 			background-repeat: no-repeat
-			+prefix-animation(my-link 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+			transition-duration: 0.3s
+			transition-timing-function: ease	
 			&:hover
-				+prefix-animation(my-link-hov 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+				transform: rotate(180deg)
 
 		.fb
 			background-image: url($baseurl + "../icons/fb.png")
 			background-size: contain
 			background-position: center center
 			background-repeat: no-repeat	
-			+prefix-animation(my-link 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+			transition-duration: 0.3s
+			transition-timing-function: ease	
 			&:hover
-				+prefix-animation(my-link-hov 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
+				transform: rotate(180deg)
 
-@keyframes my-link
-	0%
-		+prefix-transform(rotateZ(0deg))
+	
 
-	100%
-		+prefix-transform(rotateZ(180deg))	
-
-@keyframes my-link-hov
-	0%
-		+prefix-transform(rotateZ(180deg))
-
-	100%
-		+prefix-transform(rotateZ(0deg))					
+					
 
 @media screen and(max-width:985px)
 	.my-links
