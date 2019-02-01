@@ -19,13 +19,13 @@
 	
 .contact
 	min-height: 650px
-	background-color: $main-yellow
+	background-color: $lightly-teal
 
 	h3
 		font-size: 48px
 		font-family: "Poppins", Arial, sans-serif
 		text-align: center
-		color: $darkish-purple
+		color: #333
 		font-weight: 800
 		text-transform: uppercase
 		margin: 0
@@ -44,27 +44,33 @@
 			margin-top: 0
 
 		button
-			background-color: $darkish-purple
+			background-color: #333
 			color: #f4f4f4
 			font-family: "Poppins", Arial, sans-serif
 			padding: 15px 35px 15px 35px
+			border-radius: 5px
+			box-shadow: 0 5px 10px 0px rgba(0,0,0,0.25)
 			border: 0
-			font-weight: 300
+			font-weight: 800
+			letter-spacing: 1px
 			transition-duration: 0.3s
 
 			&:hover
-				font-weight: 700
+				box-shadow: 0 5px 10px 2px rgba(0,0,0,0.50)
+				background: #fff
+				color: #333
+				cursor: pointer
 				opacity: 1
 			
 
 		input, textarea
-			color: $darkish-purple
+			color: #333
 			font-family: "Poppins", Arial, sans-serif
-			background-color: $main-yellow
+			background-color: $lightly-teal
 			width: 100%
 			padding: 1em
-			border: 0px solid $darkish-purple
-			border-bottom: 5px solid $darkish-purple
+			border: 0px solid #333
+			border-bottom: 2px solid #333
 			&:focus
 				-webkit-appearance: none
 				outline: none			
@@ -73,16 +79,16 @@
 			resize: none
 
 		:-ms-input-placeholder
-			color: $darkish-purple !important
+			color: #333 !important
 			font-weight: 1000
 			font-size: 12px
 		::-ms-input-placeholder
-			color: $darkish-purple !important
+			color: #333 !important
 			font-weight: 1000
 			font-size: 12px
 
 		::placeholder
-			color: $darkish-purple
+			color: #333
 			font-weight: 1000
 			font-size: 12px	
 		

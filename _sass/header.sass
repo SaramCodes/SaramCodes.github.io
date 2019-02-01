@@ -13,8 +13,8 @@
 .my-nav
   padding-top: 35px
   padding-bottom: 35px
-  background-color: $navbar
-  position: sticky
+  background-color: #222
+  position: fixed
   top: 0
   width: 100%
   z-index: 999
@@ -28,7 +28,7 @@
     display: inline-block
     text-decoration: none
     margin-right: 50px
-    color: $light-red
+    color: $lightly-teal
     text-transform: uppercase
     font-weight: 500
 
@@ -38,7 +38,8 @@
       size: 18px
 
 header
-  background-color: $main-blue
+  background-color: #333
+  padding-top: 200px
   min-height: 100vh
 
   h2
@@ -47,9 +48,8 @@ header
       weight: 500
       size: 24px
       family: "Poppins", Arial, sans-serif
-    color: $light-red
+    color: $lightly-teal
     text-align: center
-    margin-top: 5vh
 
   .main-heading
     +prefix-animation(saram 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1 forwards)
@@ -57,15 +57,14 @@ header
     font:
       size: 103px
       family: "Poppins", Arial, sans-serif
-    color: $light-red
+    color: $lightly-teal
     text-align: center
-    margin: 25vh 0 53px 0
     text-transform: uppercase
 
 
   .head-bar
     height: 5px
-    background-color: $light-red
+    background-color: $lightly-teal
     width: 60%
     margin: auto
     +prefix-animation(bar 1s cubic-bezier(0.26, 0.96, 0.4, 0.51) 0s 1 forwards)
@@ -84,7 +83,7 @@ header
         weight: 500
         size: 14px
         family: "Poppins", Arial, sans-serif
-      color: $light-red
+      color: $lightly-teal
 
 
 
