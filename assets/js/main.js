@@ -63,39 +63,3 @@ $(function () {
 });
 
 
-const fetchAddTo = document.querySelector('.fetch-data');
-const fetcher = document.querySelector('.fetch-start');
-fetcher.addEventListener("click", callData);
-
-function callData() {
-
-    fetchAddTo.innerHTML = `
-    <div class="loading-port"><p>Loading</p>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    </div>
-    `
-
-
-    let url = this.dataset.kind;
-    url = url.toLowerCase();
-    url = url.replace(/\s/g, "-");
-    url = "assets/work/" + url + ".json";
-
-    fetch(url)
-        .then(response => response.json())
-        .then(result => {
-            fetchAddTo.innerHTML = `
-            <p> ${result.name} </p>
-            <p> ${result.hobby} </p>
-            <p> ${result.age} </p>
-        `
-        })
-        .catch(err => {
-            fetchAddTo.innerHTML = `
-            <p> Sorry, following error occured. ${err} </p>
-        `
-        })
-}
