@@ -1,14 +1,14 @@
-$(function(){
+$(function () {
     smoothScrool(300);
     workBelt();
     workLoad();
 });
 
-function smoothScrool (duration){
-    $('a[href^="#"]').on('click', function(event){
+function smoothScrool(duration) {
+    $('a[href^="#"]').on('click', function (event) {
         var target = $($(this).attr('href'));
 
-        if(target.length){
+        if (target.length) {
             event.preventDefault();
             $('html', 'body').animate({
                 scrollTop: target.offset().top
@@ -18,27 +18,27 @@ function smoothScrool (duration){
 }
 
 
-function workBelt(){
-    $('.thumb-unit').click(function() {
-        $('.work-belt').css('left','-100%');
+function workBelt() {
+    $('.thumb-unit').click(function () {
+        $('.work-belt').css('left', '-100%');
         $('.work-container').show();
     });
 
-    $('.work-return').click(function(){
+    $('.work-return').click(function () {
         $('.work-belt').css('left', '0%')
         $('.work-container').hide(700);
     })
 }
 
 
-function workLoad(){
-    $.ajaxSetup({ cache : true });
-    $('.thumb-unit').click(function(){
-      var $this = $(this),
-          newTitle = $this.find('p').text(),
-          newFolder = $this.data('folder'),
-          spinner = '<div class="loader">Loading...</div>',
-          newHTML = '/works/'+ newFolder +'.html';
+function workLoad() {
+    $.ajaxSetup({ cache: true });
+    $('.thumb-unit').click(function () {
+        var $this = $(this),
+            newTitle = $this.find('p').text(),
+            newFolder = $this.data('folder'),
+            spinner = '<div class="loader">Loading...</div>',
+            newHTML = '/works/' + newFolder + '.html';
         $('.project-load').html(spinner).load(newHTML);
 
         $('.project-title').text(newTitle)
@@ -46,18 +46,56 @@ function workLoad(){
 }
 
 
-$(function() {
+$(function () {
     // Smooth Scrolling
-    $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
+    $('a[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
         }
-      }
     });
-  });
+});
+
+
+const fetchAddTo = document.querySelector('.fetch-data');
+const fetcher = document.querySelector('.fetch-start');
+fetcher.addEventListener("click", callData);
+
+function callData() {
+
+    fetchAddTo.innerHTML = `
+    <div class="loading-port"><p>Loading</p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+    `
+
+
+    let url = this.dataset.kind;
+    url = url.toLowerCase();
+    url = url.replace(/\s/g, "-");
+    url = "assets/work/" + url + ".json";
+
+    fetch(url)
+        .then(response => response.json())
+        .then(result => {
+            fetchAddTo.innerHTML = `
+            <p> ${result.name} </p>
+            <p> ${result.hobby} </p>
+            <p> ${result.age} </p>
+        `
+        })
+        .catch(err => {
+            fetchAddTo.innerHTML = `
+            <p> Sorry, following error occured. ${err} </p>
+        `
+        })
+}
