@@ -1,0 +1,7 @@
+{
+    "projectName": "beat player",
+    "projectDate": "23-07-2018",
+    "projectGithub": "https://github.com/SaramCodes/beat-player",
+    "projectLink": "https://saramcodes.github.io/beat-player",
+    "projectDescription": "A web app where user can play different instruments sounds by pressing the respective keys that are shown on the screen. Uses a clean design. Made using Jekyll, Vanilla Javascript and Sass. Touch is also supported."
+}

@@ -1,9 +1,0 @@
-# Work section
-
-projects:
-- {name: Beat Player, folder: 'work1'}
-- {name: School Management System, folder: 'work2'}
-- {name: Minimal B&W Design, folder: 'work3'}
-- {name: Responsive Mockup, folder: 'work4'}
-- {name: AAMMN, folder: 'work5'}
-# - {name: Simply Elegant, folder: 'work6'}

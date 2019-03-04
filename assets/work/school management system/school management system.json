@@ -1,0 +1,7 @@
+{
+    "projectName": "school management system",
+    "projectDate": "15-02-2018",
+    "projectGithub": "https://github.com/saramcodes/school-management-system",
+    "projectLink": null,
+    "projectDescription": "A school management system. Developed in Django, which is a back end framework for Python. The front-end is based on material design with some modifications. Includes functionalities such as addding new students, assigning grades and generating results, adding class teachers and subjects etc. More details are on the Github page."
+}

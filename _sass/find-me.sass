@@ -1,0 +1,323 @@
+.find-me
+    padding: 50px 0 50px 0
+    position: relative
+    overflow: hidden
+    min-height: 100vh
+    width: 100vw
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: center
+    flex-wrap: wrap
+    section
+        flex-shrink: 0
+    // background: yellow
+
+.find-me-main
+    flex-basis: 320px
+    height: 400px
+    display: flex
+    justify-content: center
+    align-items: center
+    align-content: center
+
+.find-me-main-container
+    height: 314px
+    width: 182px               
+    background: $main-color
+    position: relative
+
+    h2
+        font-size: 40px
+        color: #000
+        font-weight: 700
+        position: absolute
+        top: 50%
+        right: -30px
+        transform: translateY(-50%)
+
+.find-me-main-container-line
+    height: 4px
+    background: #fff
+    border-radius: 2px
+    position: absolute
+    &:nth-child(1)
+        width: 60px
+        top: 40px
+        left: 10px
+    &:nth-child(2)
+        width: 35px
+        top: 100px
+        right: 50px
+    &:nth-child(3)
+        width: 50px
+        top: 200px
+        left: 7px        
+    &:nth-child(4)
+        width: 30px
+        top: 220px
+        right: 0px        
+
+
+.find-me-main-container-box
+    position: absolute
+    &:nth-child(5)
+        // animation: firstBox 10s ease 0s infinite forwards
+        height: 30px
+        width: 30px
+        background: $secondary-color
+        top: -20px
+        left: 0
+        transform: translate(50%, -50%) rotate(15deg)
+
+    &:nth-child(6)
+        height: 80px
+        width: 80px
+        background: $secondary-color
+        top: 0
+        right: 0
+        transform: translate(50%, -50%)            
+    
+    &:nth-child(7)
+        height: 40px
+        width: 40px
+        background: #FF3A8D
+        top: 100px
+        left: 0
+        transform: rotate(-15deg)            
+    
+    &:nth-child(8)
+        height: 56px
+        width: 56px
+        background: #C20554
+        bottom: 0
+        left: -20px
+        transform: translateY(30%) rotate(-30deg)
+
+.find-me-main-container-circle
+    position: absolute        
+    border-radius: 50%
+    &:nth-child(9)
+        height: 40px    
+        width: 40px
+        background: #FF3A8D
+        top: 60%
+        right: -50px
+    &:nth-child(10)
+        height: 60px
+        width: 60px
+        background: #FFB1D2
+        bottom: 20px
+        right: 0
+
+
+@keyframes firstBox
+    0%
+        top: -20px
+        left: 0
+        transform: translate(50%, -50%) rotate(15deg)
+    40%
+        top: -20px
+        left: 0
+        transform: translate(50%, -50%) rotate(15deg) 
+
+    50%
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%) rotate(0deg)
+    80%
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%) rotate(0deg)
+    90%
+        top: -20px
+        left: 0
+        transform: translate(50%, -50%) rotate(15deg)        
+    100%
+        top: -20px
+        left: 0
+        transform: translate(50%, -50%) rotate(15deg)
+
+
+
+.find-me-content
+    display: flex
+    justify-content: center
+    flex-basis: 320px
+    min-height: 269px
+
+.find-me-content-container
+    width: 90%
+    p
+        font-size: 13px
+        color: #000000
+        font-weight: 400
+        line-height: 2
+        span
+            color: $main-color
+            font-weight: 700
+        a
+            font-weight: 700
+            color: $main-color
+
+    form
+        display: block
+        margin-top: 30px
+        input, textarea
+            height: 45px
+            width: 218px
+            display: block
+            margin: 10px 0 10px 0
+            background: #EAEAEA
+            border-radius: 5px
+            border: 1px solid #C3C3C3
+            color: $main-color
+            font-size: 13px
+            font-weight: 400
+            padding-left: 10px 
+            resize: none
+            &:focus
+                outline: none
+                border: 1px solid $main-color
+
+        textarea
+            padding-top: 15px    
+        :-ms-input-placeholder
+            color: $main-color
+            font-weight: 700
+            font-size: 13px
+        ::-ms-input-placeholder
+            color: $main-color
+            font-weight: 700
+            font-size: 13px
+        ::placeholder
+            color: $main-color
+            font-weight: 700
+            transition-duration: 0.3s
+            font-size: 13px
+
+        button
+            display: block
+            margin-top: 30px
+            height: 35px
+            width: 126px
+            border-radius: 26px
+            background: $main-color
+            box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5)    
+            border: none
+            font-size: 13px
+            text-transform: lowercase
+            font-weight: 700
+            transition-duration: 0.3s
+            position: relative
+            top: 0
+            &:focus
+                outline: none
+                top: 3px
+            &:hover
+                background: $secondary-color
+                box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5)
+                cursor: pointer    
+
+@media screen and (min-width: 640px)
+    .find-me
+        flex-wrap: nowrap
+        justify-content: space-around
+    .find-me-main
+        order: 2
+    .find-me-content
+        order: 1
+
+@media screen and (min-width: 920px)    
+    .find-me-content
+        flex-basis: 400px
+    .find-me-content-container
+        p
+            font-size: 15px
+        form
+            input, textarea
+                height: 62px
+                width: 300px
+                font-size: 15px
+
+            textarea
+                padding-top: 18px
+
+
+            :-ms-input-placeholder
+                color: $main-color
+                font-weight: 700
+                font-size: 15px
+            ::-ms-input-placeholder
+                color: $main-color
+                font-weight: 700
+                font-size: 15px
+            ::placeholder
+                color: $main-color
+                font-weight: 700
+                transition-duration: 0.3s
+                font-size: 15px        
+            button
+                height: 47px
+                width: 171px
+                border-radius: 26px
+                position: relative
+                font-size: 15px
+                top: 0
+
+    .find-me-main
+        height: 560px
+        flex-basis: 355px
+
+    .find-me-main-container
+        height: 440px
+        width: 256px
+        h2
+            font-size: 60px
+            right: -50px
+
+    .find-me-main-container-box
+        &:nth-child(5)
+            // animation: firstBox 10s ease 0s infinite forwards
+            height: 44px
+            width: 44px
+            top: -30px
+
+        &:nth-child(6)
+            height: 100px
+            width: 100px
+        
+        &:nth-child(7)
+            height: 55px
+            width: 55px
+        
+        &:nth-child(8)
+            height: 78px
+            width: 78px
+
+    .find-me-main-container-line
+        height: 5px
+        &:nth-child(1)
+            width: 70px
+        &:nth-child(2)
+            width: 45px
+        &:nth-child(3)
+            top: 250px
+        &:nth-child(4)
+            width: 40px
+            top: 270px
+
+    .find-me-main-container-circle
+        &:nth-child(9)
+            height: 57px    
+            width: 57px
+            right: -70px
+        &:nth-child(10)
+            height: 82px
+            width: 82px
+            bottom: 30px
+
+
+@media screen and (min-width: 1020px)
+    .find-me
+        padding: 50px 110px 50px 0             

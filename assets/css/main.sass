@@ -2,69 +2,97 @@
 ---
 $baseurl: "{{ site.baseurl }}"
 
-@font-face
-  font-family: Poppins
-  src: url($baseurl + "../fonts/Poppins-ExtraLight.ttf")
-  font-weight: 100
-  
 
-@font-face
-  font-family: Poppins
-  src: url($baseurl + "../fonts/Poppins-Light.ttf")
-  font-weight: 300
-  
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: Montserrat, Lato, Helvetica, sans-serif
+    color: #000
+    
+html, body
+    height: 100%
+    width: 100%
+    background: #fff
 
-@font-face
-  font-family: Poppins
-  src: url($baseurl + "../fonts/Poppins-Regular.ttf")
-  font-weight: 400
-
-
-@font-face
-  font-family: Poppins
-  src: url($baseurl + "../fonts/Poppins-Medium.ttf")
-  font-weight: 500 
-
-@font-face
-  font-family: Poppins
-  src: url($baseurl + "../fonts/Poppins-SemiBold.ttf")
-  font-weight: 600   
-
-@font-face
-  font-family: Poppins
-  src: url($baseurl + "../fonts/Poppins-Bold.ttf")
-  font-weight: 700   
-
-@font-face
-  font-family: Poppins
-  src: url($baseurl + "../fonts/Poppins-ExtraBold.ttf")
-  font-weight: 800        
-
-@font-face
-  font-family: Poppins
-  src: url($baseurl + "../fonts/Poppins-Black.ttf")
-  font-weight: 1000     
+body
+    overflow-x: hidden
 
 
-@import typography
-@import animations
-@import colors
-@import header
-@import about
+$main-color: #FF0D73
+$secondary-color: #FF64A5
+
+@import nav
+@import landing
 @import skills
-@import tools
-@import showcase
-@import education
-@import my-links
-@import spinner
-@import contact
-@import thatsall 
+@import portfolio
+@import find-me
 @import footer
 
-html
-  overflow-x: hidden
-body
-  background-color: #333
-  margin: 0px
-  padding: 0px
-  overflow-x: hidden
+// [data-scroll]
+//     transition-duration: 1.5s
+//     transition-timing-function: cubic-bezier(0.12, 0.72, 0.24, 0.97)
+
+// [data-scroll="in"]
+//     opacity: 1
+    
+
+// [data-scroll="out"]
+//     opacity: 0
+
+
+@media screen and (min-width: 1366px)
+
+    body
+        display: flex
+        overflow: hidden
+        align-items: center
+        align-content: center
+        justify-content: center
+        background: #ff589e
+        background: -moz-linear-gradient(top, #ff589e 0%, #bb4275 100%)
+        background: -webkit-linear-gradient(top, #ff589e 0%,#bb4275 100%)
+        background: linear-gradient(to bottom, #ff589e 0%,#bb4275 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff589e', endColorstr='#bb4275',GradientType=0 )
+
+    .desktop-container
+        height: 90vh
+        position: fixed
+        width: 90vw
+        // top: 50%
+        // left: 50%
+        // transform: translate(-50%,-50%)
+        background: #fff
+        overflow-y: scroll
+        overflow-x: hidden
+        box-shadow: 70px 30px 30px 0 rgba(0,0,0,0.35)
+
+    .landing
+        padding: 0 110px 50px 0
+
+    .landing, .skills, .portfolio, .find-me
+        width: 100% 
+
+    .navbar
+        min-height: 0
+        height: 90vh
+        right: 6%
+        top: 5%
+
+    .nav-overlay
+        height: 90vh
+        width: 90vw
+        
+    nav
+        // position: absolute
+        height: 90vh
+        top: 5%
+        transform-origin: center center
+        transform: scale(0.7) rotateY(90deg)
+        right: 6%
+        // transition-duration: 0.3s
+        opacity: 0
+    .sidenav-out
+        right: 6%
+        opacity: 1
+        transform: scale(1) rotateY(0deg)
