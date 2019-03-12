@@ -225,11 +225,7 @@ function removePortfolio() {
 
 // Portfolio work code above
 
+sal({
+    once: false
+});
 
-//Scroll Out here
-// ScrollOut({
-//     threshold: 0.5,
-// });
-//Scroll Out above
-
-// var rellax = new Rellax()

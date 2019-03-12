@@ -8,12 +8,14 @@ $baseurl: "{{ site.baseurl }}"
   font-family: Montserrat
   src: url($baseurl + "../fonts/Montserrat-Bold.ttf")
   font-weight: 700
-  
+
 
 @font-face
   font-family: Montserrat
-  src: url($baseurl + "../fonts/Montserrat-Light.ttf")
-  font-weight: 400
+  src: url($baseurl + "../fonts/Montserrat-Regular.ttf")
+  font-weight: 600
+  
+
   
 
 *
@@ -42,19 +44,9 @@ $secondary-color: #FF64A5
 @import find-me
 @import footer
 
-// [data-scroll]
-//     transition-duration: 1.5s
-//     transition-timing-function: cubic-bezier(0.12, 0.72, 0.24, 0.97)
-
-// [data-scroll="in"]
-//     opacity: 1
-    
-
-// [data-scroll="out"]
-//     opacity: 0
 
 
-@media screen and (min-width: 1366px)
+@media screen and (min-width: 1366px) and (min-height: 800px)
 
     body
         display: flex
@@ -69,9 +61,9 @@ $secondary-color: #FF64A5
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff589e', endColorstr='#bb4275',GradientType=0 )
 
     .desktop-container
-        height: 90vh
+        height: 83vh
         position: fixed
-        width: 90vw
+        width: 83vw
         // top: 50%
         // left: 50%
         // transform: translate(-50%,-50%)
@@ -81,31 +73,32 @@ $secondary-color: #FF64A5
         box-shadow: 70px 30px 30px 0 rgba(0,0,0,0.35)
 
     .landing
-        padding: 0 110px 50px 0
+        padding: 0 110px 0px 0
+        min-height: 83vh
 
     .landing, .skills, .portfolio, .find-me
         width: 100% 
 
     .navbar
         min-height: 0
-        height: 90vh
-        right: 6%
-        top: 5%
+        height: 83vh
+        right: 9%
+        top: 8.5%
 
     .nav-overlay
-        height: 90vh
-        width: 90vw
+        height: 83vh
+        width: 83vw
         
     nav
         // position: absolute
-        height: 90vh
-        top: 5%
+        height: 83vh
+        top: 8.5%
         transform-origin: center center
         transform: scale(0.7) rotateY(90deg)
-        right: 6%
+        right: 9%
         // transition-duration: 0.3s
         opacity: 0
     .sidenav-out
-        right: 6%
+        right: 9%
         opacity: 1
         transform: scale(1) rotateY(0deg)
