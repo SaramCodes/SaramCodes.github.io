@@ -1,0 +1,7 @@
+{
+    "projectName": "tiktak clone backend",
+    "projectDate": "15-02-2018",
+    "projectGithub": "https://github.com/SaramCodes/tiktak_backend",
+    "projectLink": null,
+    "projectDescription": "This is a tiktok clone. It is a personal project. This repo is only for the backend. The backend is REST APIs and has been made with Django and Django Rest framework. More details are on the Github page."
+}
